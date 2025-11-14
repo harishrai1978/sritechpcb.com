@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sritech PCB Assembly & 3D Printing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#3182ce',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-primary">Sritech PCB</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="services.html" class="font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="about.html" class="font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="quote.html" class="font-medium hover:text-primary transition-colors">Get Quote</a>
+                    <a href="contact.html" class="font-medium hover:text-primary transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="block py-2 font-medium hover:text-primary transition-colors">Services</a>
+                <a href="about.html" class="block py-2 font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="quote.html" class="block py-2 font-medium hover:text-primary transition-colors">Get Quote</a>
+                <a href="contact.html" class="block py-2 font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/aboutus/1920/600.jpg" alt="About Sritech PCB" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">About Sritech PCB</h1>
+            <p class="text-xl max-w-3xl mx-auto">Your trusted partner for professional PCB design, assembly, and 3D printing services</p>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Our Story</h2>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        Founded with a vision to provide comprehensive electronics manufacturing solutions, Sritech PCB Assembly & 3D Printing has grown into a trusted name in the industry. Our journey began with a simple mission: to deliver high-quality PCB services with flexibility and reliability.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        Over the years, we've expanded our capabilities to include PCB design, assembly (SMT, Through-hole, BGA), 3D printing, and wiring harness services. Our commitment to quality and customer satisfaction has earned us the ISO 9001:2015 certification, reflecting our dedication to international standards.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">
+                        Today, we serve a diverse clientele ranging from startups and college students to large multinational corporations, always adapting to their unique needs and timelines.
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/company-facility/600/400.jpg" alt="Our Facility" class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg shadow-xl max-w-xs">
+                        <h3 class="text-xl font-bold mb-2">Since 2020</h3>
+                        <p>Serving the electronics manufacturing industry with excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Mission & Vision</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Guiding principles that drive our success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullseye text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Our Mission</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">
+                        To provide high-quality, flexible, and cost-effective PCB design, assembly, and 3D printing solutions that help our clients bring their innovative ideas to life. We strive to exceed customer expectations through technical excellence, timely delivery, and responsive service.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-eye text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">
+                        To become the preferred partner for electronics manufacturing services in India, known for our innovation, quality, and customer-centric approach. We aim to continuously expand our capabilities and adopt new technologies to serve evolving industry needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Core Values</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Principles that guide everything we do</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Quality</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Uncompromising commitment to quality in every project</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flexibility</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Adapting to customer needs and urgent timelines</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lightbulb text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Innovation</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Continuously improving and adopting new technologies</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Integrity</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Building trust through transparency and honesty</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Leadership Team</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Experienced professionals dedicated to your success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/ceo/300/300.jpg" alt="CEO" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold mb-2">John Doe</h3>
+                    <p class="text-primary font-semibold mb-2">CEO & Founder</p>
+                    <p class="text-gray-600 dark:text-gray-300">15+ years of experience in electronics manufacturing and business leadership</p>
+                </div>
+                
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/cto/300/300.jpg" alt="CTO" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold mb-2">Jane Smith</h3>
+                    <p class="text-primary font-semibold mb-2">Chief Technology Officer</p>
+                    <p class="text-gray-600 dark:text-gray-300">Expert in PCB design and manufacturing technologies with 12+ years of experience</p>
+                </div>
+                
+                <div class="text-center">
+                    <img src="https://picsum.photos/seed/coo/300/300.jpg" alt="COO" class="w-48 h-48 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold mb-2">Mike Johnson</h3>
+                    <p class="text-primary font-semibold mb-2">Chief Operations Officer</p>
+                    <p class="text-gray-600 dark:text-gray-300">Specialized in operations management and quality assurance for 10+ years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Certifications & Standards</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Committed to international quality standards</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-700 rounded-lg p-8 shadow-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+                            <i class="fas fa-certificate text-primary text-5xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">ISO 9001:2015 Certified</h3>
+                        <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                            Sritech PCB is proud to be ISO 9001:2015 certified, demonstrating our commitment to quality management systems and continuous improvement. This certification ensures that we meet international standards for:
+                        </p>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Quality management and customer satisfaction</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Process optimization and efficiency</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Continuous improvement and innovation</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Risk management and quality assurance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Work With Us?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join our growing list of satisfied customers who trust us with their electronics manufacturing needs</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="quote.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors inline-block">
+                    Get a Quote
+                </a>
+                <a href="contact.html" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors inline-block">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sritech PCB</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Professional PCB design, assembly, and 3D printing services for startups, businesses, and educational institutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="quote.html" class="text-gray-400 hover:text-white transition-colors">Get Quote</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="pcb-design.html" class="text-gray-400 hover:text-white transition-colors">PCB Design</a></li>
+                        <li><a href="pcb-assembly.html" class="text-gray-400 hover:text-white transition-colors">PCB Assembly</a></li>
+                        <li><a href="3d-printing.html" class="text-gray-400 hover:text-white transition-colors">3D Printing</a></li>
+                        <li><a href="wiring-harness.html" class="text-gray-400 hover:text-white transition-colors">Wiring Harness</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> sales@sritechpcb.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Sritech PCB Assembly & 3D Printing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
