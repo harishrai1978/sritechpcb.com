@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Design Services - Sritech PCB Assembly & 3D Printing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#3182ce',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-primary">Sritech PCB</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="services.html" class="font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="about.html" class="font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="quote.html" class="font-medium hover:text-primary transition-colors">Get Quote</a>
+                    <a href="contact.html" class="font-medium hover:text-primary transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="block py-2 font-medium hover:text-primary transition-colors">Services</a>
+                <a href="about.html" class="block py-2 font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="quote.html" class="block py-2 font-medium hover:text-primary transition-colors">Get Quote</a>
+                <a href="contact.html" class="block py-2 font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/pcbd design/1920/600.jpg" alt="PCB Design" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional PCB Design Services</h1>
+            <p class="text-xl max-w-3xl mx-auto">Expert PCB design solutions for startups and businesses, from IoT circuits to high-speed designs</p>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Custom PCB Design Solutions</h2>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        At Sritech PCB, we specialize in creating custom PCB designs tailored to your specific requirements. Our experienced team of engineers works closely with you to deliver high-quality, manufacturable designs that meet your project goals.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        Whether you're a startup developing an innovative IoT device or a business requiring complex high-speed circuitry, we have the expertise to bring your ideas to life.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">IoT Circuit Design</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Specialized designs for IoT devices with low power consumption and wireless connectivity</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">High-Speed PCB Design</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Advanced designs for high-speed digital and RF applications</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Design for Manufacturing (DFM)</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Optimized designs that ensure smooth manufacturing processes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/pcb-design-process/600/400.jpg" alt="PCB Design Process" class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg shadow-xl max-w-xs">
+                        <h3 class="text-xl font-bold mb-2">Fast Turnaround</h3>
+                        <p>Get your PCB designs completed in as little as 3-5 business days for standard projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Process -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Design Process</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We follow a systematic approach to ensure high-quality PCB designs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Requirements Analysis</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Understanding your project requirements and specifications</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Schematic Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Creating detailed circuit schematics based on requirements</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">PCB Layout</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Designing the physical layout of components and traces</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Verification & Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Design review, testing, and delivery of manufacturing files</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Design Capabilities</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Advanced capabilities to meet diverse design requirements</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-layer-group text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Multi-Layer PCBs</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Design capabilities for 1 to 16+ layer PCBs</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-microchip text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Component Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Integration of various components including BGA, QFN, and fine-pitch packages</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-wifi text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">RF & Wireless</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Expertise in RF circuit design and wireless protocols</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-bolt text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Power Management</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Efficient power supply and management circuit design</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-shield-alt text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Signal Integrity</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Ensuring signal integrity in high-speed designs</p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <i class="fas fa-tools text-primary text-3xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Design Tools</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Proficient in Altium, KiCad, Eagle, and other industry-standard tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Get a Quote for PCB Design</h2>
+                <p class="text-xl mb-8 text-center">Fill out the form below and we'll get back to you with a competitive quote</p>
+                
+                <form id="pcb-design-form" class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Your Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Design Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Design Type</option>
+                                <option value="iot">IoT Circuit</option>
+                                <option value="high-speed">High-Speed</option>
+                                <option value="power">Power Supply</option>
+                                <option value="rf">RF Circuit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Number of Layers</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Layers</option>
+                                <option value="1">1 Layer</option>
+                                <option value="2">2 Layers</option>
+                                <option value="4">4 Layers</option>
+                                <option value="6">6 Layers</option>
+                                <option value="8">8 Layers</option>
+                                <option value="10">10+ Layers</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Timeline</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Timeline</option>
+                                <option value="urgent">Urgent (1-3 days)</option>
+                                <option value="standard">Standard (5-7 days)</option>
+                                <option value="flexible">Flexible (2+ weeks)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Description</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" placeholder="Please describe your project requirements..." required></textarea>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Upload Files (Optional)</label>
+                        <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">Click to upload or drag and drop</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">PDF, DOC, DOCX, JPG, PNG, ZIP (MAX. 10MB)</p>
+                            <input type="file" class="hidden" id="file-upload" multiple>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sritech PCB</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Professional PCB design, assembly, and 3D printing services for startups, businesses, and educational institutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="quote.html" class="text-gray-400 hover:text-white transition-colors">Get Quote</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="pcb-design.html" class="text-gray-400 hover:text-white transition-colors">PCB Design</a></li>
+                        <li><a href="pcb-assembly.html" class="text-gray-400 hover:text-white transition-colors">PCB Assembly</a></li>
+                        <li><a href="3d-printing.html" class="text-gray-400 hover:text-white transition-colors">3D Printing</a></li>
+                        <li><a href="wiring-harness.html" class="text-gray-400 hover:text-white transition-colors">Wiring Harness</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> sales@sritechpcb.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Sritech PCB Assembly & 3D Printing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // File Upload
+        const fileUpload = document.getElementById('file-upload');
+        const uploadArea = fileUpload.parentElement;
+        
+        uploadArea.addEventListener('click', () => {
+            fileUpload.click();
+        });
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-primary');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-primary');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-primary');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                uploadArea.querySelector('p').textContent = `Selected: ${files.length} file(s)`;
+            }
+        });
+        
+        fileUpload.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (files.length > 0) {
+                uploadArea.querySelector('p').textContent = `Selected: ${files.length} file(s)`;
+            }
+        });
+        
+        // Form Submission
+        document.getElementById('pcb-design-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMessage.textContent = 'Your quote request has been submitted successfully!';
+            document.body.appendChild(successMessage);
+            
+            // Reset form
+            e.target.reset();
+            uploadArea.querySelector('p').textContent = 'Click to upload or drag and drop';
+            
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
