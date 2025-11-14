@@ -3,1285 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sritech PCB Assembly & 3D Printing - Professional PCB Design, Assembly & 3D Printing Services</title>
+    <title>Sritech PCB Assembly & 3D Printing - Professional PCB Assembly, Design & 3D Printing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #1a56db;
-            --secondary-color: #3182ce;
-            --accent-color: #4299e1;
-            --light-bg: #ffffff;
-            --light-text: #1a202c;
-            --light-card: #f7fafc;
-            --light-border: #e2e8f0;
-            --dark-bg: #1a202c;
-            --dark-text: #f7fafc;
-            --dark-card: #2d3748;
-            --dark-border: #4a5568;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--light-text);
-            line-height: 1.6;
-            transition: var(--transition);
-        }
-
-        body.dark-mode {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--light-bg);
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            transition: var(--transition);
-        }
-
-        body.dark-mode header {
-            background-color: var(--dark-card);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .logo img {
-            height: 40px;
-            border-radius: 5px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--light-text);
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        body.dark-mode .nav-links a {
-            color: var(--dark-text);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--light-text);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .theme-toggle {
-            color: var(--dark-text);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--light-text);
-            margin: 3px 0;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .hamburger span {
-            background-color: var(--dark-text);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background-color: white;
-            color: var(--primary-color);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 5rem 0;
-            background-color: var(--light-card);
-            transition: var(--transition);
-        }
-
-        body.dark-mode .services {
-            background-color: var(--dark-card);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background-color: var(--light-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            text-align: center;
-        }
-
-        body.dark-mode .service-card {
-            background-color: var(--dark-bg);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .service-card p {
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            text-align: left;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features li {
-            margin-bottom: 0.5rem;
-            list-style-type: none;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: var(--transition);
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .certification {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: var(--light-card);
-            border-radius: 10px;
-        }
-
-        body.dark-mode .certification {
-            background-color: var(--dark-card);
-        }
-
-        .certification i {
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-
-        /* Quote Section */
-        .quote-section {
-            padding: 5rem 0;
-            background-color: var(--light-card);
-            transition: var(--transition);
-        }
-
-        body.dark-mode .quote-section {
-            background-color: var(--dark-card);
-        }
-
-        .quote-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: var(--light-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        body.dark-mode .quote-container {
-            background-color: var(--dark-bg);
-        }
-
-        .quote-tabs {
-            display: flex;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--light-border);
-        }
-
-        body.dark-mode .quote-tabs {
-            border-bottom-color: var(--dark-border);
-        }
-
-        .quote-tab {
-            padding: 0.8rem 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--light-text);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        body.dark-mode .quote-tab {
-            color: var(--dark-text);
-        }
-
-        .quote-tab.active {
-            color: var(--primary-color);
-        }
-
-        .quote-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .quote-form {
-            display: none;
-        }
-
-        .quote-form.active {
-            display: block;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--light-border);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: var(--transition);
-            background-color: var(--light-bg);
-            color: var(--light-text);
-        }
-
-        body.dark-mode .form-control {
-            background-color: var(--dark-bg);
-            border-color: var(--dark-border);
-            color: var(--dark-text);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
-        }
-
-        .file-upload {
-            position: relative;
-            display: inline-block;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .file-upload input[type="file"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-
-        .file-upload-label {
-            display: block;
-            padding: 0.8rem;
-            border: 2px dashed var(--light-border);
-            border-radius: 5px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        body.dark-mode .file-upload-label {
-            border-color: var(--dark-border);
-        }
-
-        .file-upload:hover .file-upload-label {
-            border-color: var(--primary-color);
-            background-color: rgba(26, 86, 219, 0.05);
-        }
-
-        .file-upload-label i {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 0;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-top: 0.2rem;
-        }
-
-        .contact-form {
-            background-color: var(--light-card);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        body.dark-mode .contact-form {
-            background-color: var(--dark-card);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-bg);
-            color: var(--dark-text);
-            padding: 3rem 0 1rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-color);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-column ul li a {
-            color: var(--dark-text);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--accent-color);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: var(--dark-card);
-            color: var(--dark-text);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--dark-border);
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 5px;
-            box-shadow: var(--shadow);
-            transform: translateX(120%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-        }
-
-        .toast.show {
-            transform: translateX(0);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-                order: -1;
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#3182ce',
+                        accent: '#4299e1',
+                    }
+                }
             }
         }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--light-bg);
-                flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                gap: 1rem;
-                box-shadow: var(--shadow);
-                transform: translateY(-120%);
-                transition: transform 0.3s ease;
-                z-index: 99;
-            }
-
-            body.dark-mode .nav-links {
-                background-color: var(--dark-card);
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    </script>
 </head>
-<body>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <img src="https://picsum.photos/seed/sritechlogo/40/40.jpg" alt="Sritech PCB Logo">
-                    <span>Sritech PCB</span>
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-primary">Sritech PCB</span>
                 </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#quote">Get Quote</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="theme-toggle">
-                        <i class="fas fa-moon"></i>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="services.html" class="font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="about.html" class="font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="quote.html" class="font-medium hover:text-primary transition-colors">Get Quote</a>
+                    <a href="contact.html" class="font-medium hover:text-primary transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
                     </button>
-                    <div class="hamburger" id="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="block py-2 font-medium hover:text-primary transition-colors">Services</a>
+                <a href="about.html" class="block py-2 font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="quote.html" class="block py-2 font-medium hover:text-primary transition-colors">Get Quote</a>
+                <a href="contact.html" class="block py-2 font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Professional PCB Design, Assembly & 3D Printing Services</h1>
-            <p>Your one-stop solution for PCB design, assembly (SMT, Through-hole, BGA), and 3D printing needs. ISO 9001:2015 certified with flexible delivery options to meet your project deadlines.</p>
-            <div class="cta-buttons">
-                <a href="#quote" class="btn btn-primary">Get a Quote</a>
-                <a href="#services" class="btn btn-secondary">Our Services</a>
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/pcbmanufacturing/1920/1080.jpg" alt="PCB Manufacturing" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Professional PCB Assembly, Design & 3D Printing Services</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Your one-stop solution for PCB design, assembly (SMT, Through-hole, BGA), and 3D printing needs. ISO 9001:2015 certified with flexible delivery options to meet your project deadlines.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="quote.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">Get a Quote</a>
+                <a href="#services" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors">Our Services</a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions for all your electronics manufacturing needs</p>
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Comprehensive solutions for all your electronics manufacturing needs</p>
             </div>
-            <div class="services-grid">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- PCB Design Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-microchip"></i>
+                <a href="pcb-design.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-microchip text-white text-5xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3>PCB Design</h3>
-                    <p>Professional PCB design services for startups and businesses looking for complete design and assembly solutions.</p>
-                    <ul class="service-features">
-                        <li>IoT Circuit Design</li>
-                        <li>High-Speed PCB Design</li>
-                        <li>Custom Solutions Based on Requirements</li>
-                        <li>Design for Manufacturing (DFM)</li>
-                    </ul>
-                    <a href="#quote" class="btn btn-primary">Request Design</a>
-                </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">PCB Design</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Professional PCB design services for startups and businesses.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>IoT Circuit Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>High-Speed PCB Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Solutions</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- PCB Assembly Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-print"></i>
+                <a href="pcb-assembly.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-print text-white text-5xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3>PCB Assembly</h3>
-                    <p>Complete PCB assembly services for startups, MNCs, and college students with flexible delivery options.</p>
-                    <ul class="service-features">
-                        <li>SMT Assembly</li>
-                        <li>Through-Hole Assembly</li>
-                        <li>BGA Assembly</li>
-                        <li>Prototype to Production</li>
-                    </ul>
-                    <a href="#quote" class="btn btn-primary">Request Assembly</a>
-                </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">PCB Assembly</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Complete PCB assembly services for all types of projects.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>SMT Assembly</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Through-Hole Assembly</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>BGA Assembly</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- 3D Printing Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cube"></i>
+                <a href="3d-printing.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-5xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3>3D Printing</h3>
-                    <p>High-quality 3D printing services for hobbyists, students, and businesses needing custom enclosures and parts.</p>
-                    <ul class="service-features">
-                        <li>FDM Technology</li>
-                        <li>Multicolor PLA & PETG</li>
-                        <li>Custom Enclosures for Electronics</li>
-                        <li>Coming Soon: ABS & Resin Printing</li>
-                    </ul>
-                    <a href="#quote" class="btn btn-primary">Request 3D Print</a>
-                </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">3D Printing</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality 3D printing for custom parts and enclosures.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>FDM Technology</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Multicolor PLA & PETG</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Enclosures</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Wiring Harness Service -->
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plug"></i>
+                <a href="wiring-harness.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-plug text-white text-5xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3>Wiring Harness</h3>
-                    <p>Custom wiring harness solutions for all your electronic assembly needs.</p>
-                    <ul class="service-features">
-                        <li>Custom Wire Harness Design</li>
-                        <li>Prototyping and Production</li>
-                        <li>Quality Testing</li>
-                        <li>Fast Turnaround</li>
-                    </ul>
-                    <a href="#quote" class="btn btn-primary">Request Harness</a>
-                </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Wiring Harness</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Custom wiring harness solutions for electronic assemblies.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Prototyping</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Production</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Sritech PCB</h2>
-                    <p>Sritech PCB Assembly & 3D Printing is a leading provider of comprehensive electronics manufacturing services. We specialize in PCB design, assembly (SMT, Through-hole, BGA), and 3D printing solutions tailored to meet the diverse needs of our clients.</p>
-                    <p>Our team of experienced professionals is committed to delivering high-quality products with flexible delivery options to meet your project deadlines. Whether you're a startup working on an innovative IoT device, a college student with a project, or a large corporation requiring mass production, we have the expertise and capabilities to serve you.</p>
-                    <div class="certification">
-                        <i class="fas fa-certificate"></i>
-                        <div>
-                            <h4>ISO 9001:2015 Certified</h4>
-                            <p>Committed to quality management and customer satisfaction</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://picsum.photos/seed/pcbmanufacturing/600/400.jpg" alt="PCB Manufacturing">
-                </div>
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose Sritech PCB</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We provide quality services with flexible options to meet your needs</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <section class="quote-section" id="quote">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get a Quote</h2>
-                <p>Request a quote for any of our services</p>
-            </div>
-            <div class="quote-container">
-                <div class="quote-tabs">
-                    <button class="quote-tab active" data-tab="pcb-design">PCB Design</button>
-                    <button class="quote-tab" data-tab="pcb-assembly">PCB Assembly</button>
-                    <button class="quote-tab" data-tab="3d-printing">3D Printing</button>
-                    <button class="quote-tab" data-tab="wiring-harness">Wiring Harness</button>
-                </div>
-
-                <!-- PCB Design Form -->
-                <div class="quote-form active" id="pcb-design">
-                    <form id="pcb-design-form">
-                        <div class="form-group">
-                            <label for="pcb-design-name">Your Name</label>
-                            <input type="text" class="form-control" id="pcb-design-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-design-email">Email</label>
-                            <input type="email" class="form-control" id="pcb-design-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-design-phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="pcb-design-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-design-type">Design Type</label>
-                            <select class="form-control" id="pcb-design-type" required>
-                                <option value="">Select Design Type</option>
-                                <option value="iot">IoT Circuit</option>
-                                <option value="high-speed">High-Speed</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-design-layers">Number of Layers</label>
-                            <select class="form-control" id="pcb-design-layers" required>
-                                <option value="">Select Layers</option>
-                                <option value="1">1 Layer</option>
-                                <option value="2">2 Layers</option>
-                                <option value="4">4 Layers</option>
-                                <option value="6">6 Layers</option>
-                                <option value="8">8+ Layers</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-design-description">Project Description</label>
-                            <textarea class="form-control" id="pcb-design-description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Files (Optional)</label>
-                            <div class="file-upload">
-                                <input type="file" id="pcb-design-files" multiple>
-                                <label for="pcb-design-files" class="file-upload-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Click to upload or drag and drop</p>
-                                    <p>PDF, DOC, DOCX, JPG, PNG, ZIP (MAX. 10MB)</p>
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Get Quote</button>
-                    </form>
-                </div>
-
-                <!-- PCB Assembly Form -->
-                <div class="quote-form" id="pcb-assembly">
-                    <form id="pcb-assembly-form">
-                        <div class="form-group">
-                            <label for="pcb-assembly-name">Your Name</label>
-                            <input type="text" class="form-control" id="pcb-assembly-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-assembly-email">Email</label>
-                            <input type="email" class="form-control" id="pcb-assembly-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-assembly-phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="pcb-assembly-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-assembly-type">Assembly Type</label>
-                            <select class="form-control" id="pcb-assembly-type" required>
-                                <option value="">Select Assembly Type</option>
-                                <option value="smt">SMT</option>
-                                <option value="through-hole">Through-Hole</option>
-                                <option value="bga">BGA</option>
-                                <option value="mixed">Mixed</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-assembly-quantity">Quantity</label>
-                            <input type="number" class="form-control" id="pcb-assembly-quantity" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pcb-assembly-description">Project Description</label>
-                            <textarea class="form-control" id="pcb-assembly-description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Files (Optional)</label>
-                            <div class="file-upload">
-                                <input type="file" id="pcb-assembly-files" multiple>
-                                <label for="pcb-assembly-files" class="file-upload-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Click to upload or drag and drop</p>
-                                    <p>Gerber Files, BOM, Pick & Place, PDF, DOC, DOCX, JPG, PNG, ZIP (MAX. 10MB)</p>
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Get Quote</button>
-                    </form>
-                </div>
-
-                <!-- 3D Printing Form -->
-                <div class="quote-form" id="3d-printing">
-                    <form id="3d-printing-form">
-                        <div class="form-group">
-                            <label for="3d-printing-name">Your Name</label>
-                            <input type="text" class="form-control" id="3d-printing-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-email">Email</label>
-                            <input type="email" class="form-control" id="3d-printing-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="3d-printing-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-technology">Printing Technology</label>
-                            <select class="form-control" id="3d-printing-technology" required>
-                                <option value="">Select Technology</option>
-                                <option value="fdm">FDM</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-material">Material</label>
-                            <select class="form-control" id="3d-printing-material" required>
-                                <option value="">Select Material</option>
-                                <option value="pla">PLA (Multicolor)</option>
-                                <option value="petg">PETG (Multicolor)</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-quantity">Quantity</label>
-                            <input type="number" class="form-control" id="3d-printing-quantity" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="3d-printing-description">Project Description</label>
-                            <textarea class="form-control" id="3d-printing-description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload 3D Files</label>
-                            <div class="file-upload">
-                                <input type="file" id="3d-printing-files" multiple>
-                                <label for="3d-printing-files" class="file-upload-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Click to upload or drag and drop</p>
-                                    <p>STL, OBJ, 3MF (MAX. 10MB)</p>
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Get Quote</button>
-                    </form>
-                </div>
-
-                <!-- Wiring Harness Form -->
-                <div class="quote-form" id="wiring-harness">
-                    <form id="wiring-harness-form">
-                        <div class="form-group">
-                            <label for="wiring-harness-name">Your Name</label>
-                            <input type="text" class="form-control" id="wiring-harness-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="wiring-harness-email">Email</label>
-                            <input type="email" class="form-control" id="wiring-harness-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="wiring-harness-phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="wiring-harness-phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="wiring-harness-type">Harness Type</label>
-                            <select class="form-control" id="wiring-harness-type" required>
-                                <option value="">Select Harness Type</option>
-                                <option value="custom">Custom Design</option>
-                                <option value="standard">Standard Configuration</option>
-                                <option value="prototype">Prototype</option>
-                                <option value="production">Production</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="wiring-harness-quantity">Quantity</label>
-                            <input type="number" class="form-control" id="wiring-harness-quantity" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="wiring-harness-description">Project Description</label>
-                            <textarea class="form-control" id="wiring-harness-description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Files (Optional)</label>
-                            <div class="file-upload">
-                                <input type="file" id="wiring-harness-files" multiple>
-                                <label for="wiring-harness-files" class="file-upload-label">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    <p>Click to upload or drag and drop</p>
-                                    <p>PDF, DOC, DOCX, JPG, PNG, ZIP (MAX. 10MB)</p>
-                                </label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Get Quote</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h2>Contact Us</h2>
-                    <p>Get in touch with us for any inquiries about our services or to request a quote.</p>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>sales@sritechpcb.com</p>
-                        </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-primary text-2xl"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
-                            <p>Sritech PCB ASSEMBLY<br>
-                            2/16, 1st Main Rd, 4th Cross,<br>
-                            Parappana Agrahara, Bengaluru,<br>
-                            Karnataka 560100</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Business Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
-                            Saturday: 9:00 AM - 2:00 PM<br>
-                            Sunday: Closed</p>
-                        </div>
-                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flexible Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We offer flexible delivery options based on your project urgency and requirements.</p>
                 </div>
                 
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="contact-name">Your Name</label>
-                            <input type="text" class="form-control" id="contact-name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-email">Email</label>
-                            <input type="email" class="form-control" id="contact-email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-subject">Subject</label>
-                            <input type="text" class="form-control" id="contact-subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact-message">Message</label>
-                            <textarea class="form-control" id="contact-message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ISO 9001:2015 Certified</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Committed to quality management and customer satisfaction with international standards.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Team</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Our experienced professionals are dedicated to delivering high-quality products.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Get a quote for your PCB design, assembly, or 3D printing needs today.</p>
+            <a href="quote.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors inline-block">
+                Get a Quote Now
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>About Sritech PCB</h3>
-                    <p>Professional PCB design, assembly, and 3D printing services for startups, businesses, and educational institutions.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sritech PCB</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Professional PCB assembly, design, and 3D printing services for startups, businesses, and educational institutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#quote">Get Quote</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="quote.html" class="text-gray-400 hover:text-white transition-colors">Get Quote</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="#services">PCB Design</a></li>
-                        <li><a href="#services">PCB Assembly</a></li>
-                        <li><a href="#services">3D Printing</a></li>
-                        <li><a href="#services">Wiring Harness</a></li>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="pcb-design.html" class="text-gray-400 hover:text-white transition-colors">PCB Design</a></li>
+                        <li><a href="pcb-assembly.html" class="text-gray-400 hover:text-white transition-colors">PCB Assembly</a></li>
+                        <li><a href="3d-printing.html" class="text-gray-400 hover:text-white transition-colors">3D Printing</a></li>
+                        <li><a href="wiring-harness.html" class="text-gray-400 hover:text-white transition-colors">Wiring Harness</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <p><i class="fas fa-envelope"></i> sales@sritechpcb.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</p>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> sales@sritechpcb.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
                 <p>&copy; 2023 Sritech PCB Assembly & 3D Printing. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <p id="toast-message">Message sent successfully!</p>
-    </div>
-
     <script>
         // Theme Toggle
         const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
         
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            icon.classList.replace('fa-moon', 'fa-sun');
+            html.classList.add('dark');
         }
         
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                icon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                icon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'light');
-            }
-        });
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
         
         // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-        
-        // Quote Tabs
-        const quoteTabs = document.querySelectorAll('.quote-tab');
-        const quoteForms = document.querySelectorAll('.quote-form');
-        
-        quoteTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const tabId = tab.getAttribute('data-tab');
-                
-                // Remove active class from all tabs and forms
-                quoteTabs.forEach(t => t.classList.remove('active'));
-                quoteForms.forEach(f => f.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding form
-                tab.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Toast Notification
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toast-message');
-            
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-        
-        // Form Submissions
-        document.getElementById('pcb-design-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Your PCB Design quote request has been submitted successfully!');
-            e.target.reset();
-        });
-        
-        document.getElementById('pcb-assembly-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Your PCB Assembly quote request has been submitted successfully!');
-            e.target.reset();
-        });
-        
-        document.getElementById('3d-printing-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Your 3D Printing quote request has been submitted successfully!');
-            e.target.reset();
-        });
-        
-        document.getElementById('wiring-harness-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Your Wiring Harness quote request has been submitted successfully!');
-            e.target.reset();
-        });
-        
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            showToast('Your message has been sent successfully!');
-            e.target.reset();
-        });
-        
-        // File Upload Display
-        document.querySelectorAll('input[type="file"]').forEach(input => {
-            input.addEventListener('change', (e) => {
-                const files = e.target.files;
-                const label = input.nextElementSibling;
-                
-                if (files.length > 0) {
-                    const fileNames = Array.from(files).map(file => file.name).join(', ');
-                    label.querySelector('p').textContent = `Selected: ${fileNames}`;
-                }
-            });
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
         
         // Smooth Scrolling
