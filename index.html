@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sritech PCB Assembly & 3D Printing - Professional PCB Assembly, Design & 3D Printing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#3182ce',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-primary">Sritech PCB</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="services.html" class="font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="about.html" class="font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="quote.html" class="font-medium hover:text-primary transition-colors">Get Quote</a>
+                    <a href="contact.html" class="font-medium hover:text-primary transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="block py-2 font-medium hover:text-primary transition-colors">Services</a>
+                <a href="about.html" class="block py-2 font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="quote.html" class="block py-2 font-medium hover:text-primary transition-colors">Get Quote</a>
+                <a href="contact.html" class="block py-2 font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/pcbmanufacturing/1920/1080.jpg" alt="PCB Manufacturing" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Professional PCB Assembly, Design & 3D Printing Services</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Your one-stop solution for PCB design, assembly (SMT, Through-hole, BGA), and 3D printing needs. ISO 9001:2015 certified with flexible delivery options to meet your project deadlines.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="quote.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">Get a Quote</a>
+                <a href="#services" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Comprehensive solutions for all your electronics manufacturing needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- PCB Design Service -->
+                <a href="pcb-design.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-microchip text-white text-5xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">PCB Design</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Professional PCB design services for startups and businesses.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>IoT Circuit Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>High-Speed PCB Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Solutions</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- PCB Assembly Service -->
+                <a href="pcb-assembly.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-print text-white text-5xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">PCB Assembly</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Complete PCB assembly services for all types of projects.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>SMT Assembly</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Through-Hole Assembly</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>BGA Assembly</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- 3D Printing Service -->
+                <a href="3d-printing.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-cube text-white text-5xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">3D Printing</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">High-quality 3D printing for custom parts and enclosures.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>FDM Technology</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Multicolor PLA & PETG</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Enclosures</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Wiring Harness Service -->
+                <a href="wiring-harness.html" class="group bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-plug text-white text-5xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Wiring Harness</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Custom wiring harness solutions for electronic assemblies.</p>
+                        <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                            <li><i class="fas fa-check text-primary mr-2"></i>Custom Design</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Prototyping</li>
+                            <li><i class="fas fa-check text-primary mr-2"></i>Production</li>
+                        </ul>
+                        <div class="mt-4 text-primary font-semibold flex items-center">
+                            Learn More <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose Sritech PCB</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We provide quality services with flexible options to meet your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Flexible Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We offer flexible delivery options based on your project urgency and requirements.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ISO 9001:2015 Certified</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Committed to quality management and customer satisfaction with international standards.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Expert Team</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Our experienced professionals are dedicated to delivering high-quality products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Get a quote for your PCB design, assembly, or 3D printing needs today.</p>
+            <a href="quote.html" class="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors inline-block">
+                Get a Quote Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sritech PCB</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Professional PCB assembly, design, and 3D printing services for startups, businesses, and educational institutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="quote.html" class="text-gray-400 hover:text-white transition-colors">Get Quote</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="pcb-design.html" class="text-gray-400 hover:text-white transition-colors">PCB Design</a></li>
+                        <li><a href="pcb-assembly.html" class="text-gray-400 hover:text-white transition-colors">PCB Assembly</a></li>
+                        <li><a href="3d-printing.html" class="text-gray-400 hover:text-white transition-colors">3D Printing</a></li>
+                        <li><a href="wiring-harness.html" class="text-gray-400 hover:text-white transition-colors">Wiring Harness</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> sales@sritechpcb.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Sritech PCB Assembly & 3D Printing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
