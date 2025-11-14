@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiring Harness Services - Sritech PCB Assembly & 3D Printing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1a56db',
+                        secondary: '#3182ce',
+                        accent: '#4299e1',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                    <span class="text-xl font-bold text-primary">Sritech PCB</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="font-medium hover:text-primary transition-colors">Home</a>
+                    <a href="services.html" class="font-medium hover:text-primary transition-colors">Services</a>
+                    <a href="about.html" class="font-medium hover:text-primary transition-colors">About Us</a>
+                    <a href="quote.html" class="font-medium hover:text-primary transition-colors">Get Quote</a>
+                    <a href="contact.html" class="font-medium hover:text-primary transition-colors">Contact</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors mr-2">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="p-2">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="index.html" class="block py-2 font-medium hover:text-primary transition-colors">Home</a>
+                <a href="services.html" class="block py-2 font-medium hover:text-primary transition-colors">Services</a>
+                <a href="about.html" class="block py-2 font-medium hover:text-primary transition-colors">About Us</a>
+                <a href="quote.html" class="block py-2 font-medium hover:text-primary transition-colors">Get Quote</a>
+                <a href="contact.html" class="block py-2 font-medium hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-96 flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/wiringharness/1920/600.jpg" alt="Wiring Harness" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-900/90 to-orange-700/80"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Wiring Harness Services</h1>
+            <p class="text-xl max-w-3xl mx-auto">Custom wiring harness solutions for electronic assemblies, from prototypes to production runs</p>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-6">Custom Wiring Harness Solutions</h2>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        At Sritech PCB, we specialize in manufacturing custom wiring harnesses that meet the exact specifications of your electronic assemblies. Our experienced team ensures reliable connections and optimal performance for your applications.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-600 dark:text-gray-300">
+                        From simple prototype harnesses to complex production assemblies, we deliver high-quality solutions with attention to detail and quick turnaround times to meet your project deadlines.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Custom Design</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Tailored wiring harnesses to your exact requirements</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Prototyping</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Quick prototype development for testing and validation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h3 class="font-semibold mb-1">Production</h3>
+                                <p class="text-gray-600 dark:text-gray-300">Volume production with consistent quality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <img src="https://picsum.photos/seed/wiring-harness-assembly/600/400.jpg" alt="Wiring Harness Assembly" class="rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white p-6 rounded-lg shadow-xl max-w-xs">
+                        <h3 class="text-xl font-bold mb-2">Quality Tested</h3>
+                        <p>Every harness undergoes rigorous testing before delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Process -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Our Manufacturing Process</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We follow a systematic approach to ensure quality and reliability</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Design Review</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Analysis of requirements and design optimization</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Material Selection</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Choosing appropriate wires, connectors, and components</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Assembly</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Precision assembly with quality workmanship</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-primary">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Testing & QC</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Comprehensive testing and quality control</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harness Types -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Types of Wiring Harnesses</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We manufacture various types of wiring harnesses for different applications</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-plug text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Custom Design</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Bespoke wiring harnesses designed to your exact specifications and requirements.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check text-primary mr-2"></i>Custom configurations</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Special connectors</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Unique layouts</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Prototype</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Quick-turn prototype harnesses for testing and development phases.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check text-primary mr-2"></i>Fast delivery</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Design flexibility</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Iterative development</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+                    <div class="h-48 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-industry text-white text-5xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Production</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Volume production harnesses with consistent quality and competitive pricing.</p>
+                    <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                        <li><i class="fas fa-check text-primary mr-2"></i>Volume manufacturing</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Cost-effective</li>
+                        <li><i class="fas fa-check text-primary mr-2"></i>Consistent quality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Applications</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Wiring harnesses for various industries and applications</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-microchip text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Electronics</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Internal wiring for electronic devices and equipment</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-car text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Automotive</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Vehicle wiring systems and automotive electronics</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-robot text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Industrial</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Industrial machinery and control systems</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-satellite text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Aerospace</h3>
+                    <p class="text-gray-600 dark:text-gray-300">High-reliability harnesses for aerospace applications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Standards -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Quality Standards</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">We adhere to strict quality standards in every harness we produce</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Visual Inspection</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Thorough visual inspection of every connection</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bolt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Continuity Testing</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Electrical continuity testing for all circuits</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Insulation Testing</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Insulation resistance and dielectric testing</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clipboard-check text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Documentation</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Complete test reports and traceability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">Get a Quote for Wiring Harness</h2>
+                <p class="text-xl mb-8 text-center">Fill out the form below and we'll get back to you with a competitive quote</p>
+                
+                <form id="wiring-harness-form" class="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Your Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Harness Type</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Harness Type</option>
+                                <option value="custom">Custom Design</option>
+                                <option value="standard">Standard Configuration</option>
+                                <option value="prototype">Prototype</option>
+                                <option value="production">Production</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Application</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Application</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="automotive">Automotive</option>
+                                <option value="industrial">Industrial</option>
+                                <option value="aerospace">Aerospace</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Quantity</label>
+                            <input type="number" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" min="1" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Number of Connectors</label>
+                            <input type="number" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" min="1" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Delivery Timeline</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" required>
+                                <option value="">Select Timeline</option>
+                                <option value="urgent">Urgent (1-3 days)</option>
+                                <option value="express">Express (5-7 days)</option>
+                                <option value="standard">Standard (10-14 days)</option>
+                                <option value="flexible">Flexible (3+ weeks)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Project Description</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900 dark:text-gray-100" placeholder="Please describe your wiring harness requirements..." required></textarea>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Upload Files (Optional)</label>
+                        <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center hover:border-primary transition-colors">
+                            <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">Click to upload or drag and drop</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Schematics, Specifications, PDF, DOC, DOCX, JPG, PNG, ZIP (MAX. 10MB)</p>
+                            <input type="file" class="hidden" id="file-upload" multiple>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                            Get Quote
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/logo.png" alt="Sritech PCB Logo" class="h-10 w-auto">
+                        <span class="text-xl font-bold">Sritech PCB</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Professional PCB design, assembly, and 3D printing services for startups, businesses, and educational institutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="quote.html" class="text-gray-400 hover:text-white transition-colors">Get Quote</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="pcb-design.html" class="text-gray-400 hover:text-white transition-colors">PCB Design</a></li>
+                        <li><a href="pcb-assembly.html" class="text-gray-400 hover:text-white transition-colors">PCB Assembly</a></li>
+                        <li><a href="3d-printing.html" class="text-gray-400 hover:text-white transition-colors">3D Printing</a></li>
+                        <li><a href="wiring-harness.html" class="text-gray-400 hover:text-white transition-colors">Wiring Harness</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> sales@sritechpcb.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 2/16, 1st Main Rd, 4th Cross,<br>Parappana Agrahara, Bengaluru,<br>Karnataka 560100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Sritech PCB Assembly & 3D Printing. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // File Upload
+        const fileUpload = document.getElementById('file-upload');
+        const uploadArea = fileUpload.parentElement;
+        
+        uploadArea.addEventListener('click', () => {
+            fileUpload.click();
+        });
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-primary');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-primary');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-primary');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                uploadArea.querySelector('p').textContent = `Selected: ${files.length} file(s)`;
+            }
+        });
+        
+        fileUpload.addEventListener('change', (e) => {
+            const files = e.target.files;
+            if (files.length > 0) {
+                uploadArea.querySelector('p').textContent = `Selected: ${files.length} file(s)`;
+            }
+        });
+        
+        // Form Submission
+        document.getElementById('wiring-harness-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMessage.textContent = 'Your quote request has been submitted successfully!';
+            document.body.appendChild(successMessage);
+            
+            // Reset form
+            e.target.reset();
+            uploadArea.querySelector('p').textContent = 'Click to upload or drag and drop';
+            
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
